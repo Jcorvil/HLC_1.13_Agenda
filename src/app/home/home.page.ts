@@ -10,10 +10,11 @@ import {map} from 'rxjs/operators';
 export class HomePage {
 
   users: any;
+  filtro: string = "";
 
   constructor(private httpClient:HttpClient) {
 
-    this.users = this.httpClient.get('https://randomuser.me/api/?results=20').pipe(map((res:any)=>res['results']));
+    this.users = this.httpClient.get('https://raw.githubusercontent.com/Jcorvil/arrayAgenda/master/array.json').pipe(map((res:any)=>res['results']));
 
   }
 
